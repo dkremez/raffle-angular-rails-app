@@ -1,15 +1,27 @@
-<h1>Raffle</h1>
+<h1>Players List</h1>
+<br>
 <div ng-controller="RaffleGtrl">
 	<form ng-submit="addEntry()">
 		<input type='text' ng-model='newEntry.name'>
 		<input type='submit' value='Add'>
 	</form>
-	<ul>
-		<li ng-repeat="entry in entries">
-			{{entry.name}}
-			<span ng-show='entry.winner' ng-class='{highlight: entry == lastWinner}' class='winner'>WINNER</span>
-		</li>
-	</ul>
+	<br>
+	<hr>
+	<table>
+		<thead>
+      <th>Имя игрока</th>
+      <th>Статус</th>
+      <th>Действия</th>
+		</thead>	
+		<tbody>
+      <tr ng-repeat="entry in entries">
+			  <td ng-click="editEntry(entry)">{{entry.name}}</td>
+			  <td><span ng-show='entry.winner' ng-class='{highlight: entry == lastWinner}' class='winner'>WINNER</span> {{entry.win_times}}</td>
+			  <td ng-click="deleteEntry(entry)"><a>X</a></td>
+		  </tr>
+		</tbody>
+		
+	</table>
 
 	<button ng-click="drawWinner()">Draw Winner</button>
 </div>

@@ -11,10 +11,6 @@ a img {
   border: none;
 }
 
-a {
-  color: #0000FF;
-}
-
 .clear {
   clear: both;
   height: 0;
@@ -57,6 +53,18 @@ form input[type='submit'], button {
   vertical-align: top;
 }
 
+a {
+  color: red;
+}
+
+table {
+  width: 100%;
+  text-align: left;
+  span {
+    text-align: left;
+  }
+}
+
 button {
   margin: 20px auto;
 }
@@ -75,15 +83,12 @@ ul {
   border-top: solid 1px #CCC;
 }
 
-li {
+td {
   border-bottom: solid 1px #CCC;
   padding: 10px 10px;
   font-size: 16px;
   position: relative;
   .winner {
-    position: absolute;
-    right: 10px;
-    top: 10px;
     color: #999;
     &.highlight {
       color: #DD0000;
